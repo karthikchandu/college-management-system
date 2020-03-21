@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <title>Registration form</title>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+    .registerbox{
+ width: 280px;
+height: 380px;
+background:rgba(0,0,0,0.5);
+color:#fff;
+top:55%;
+left:50%;
+position:absolute;
+transform:translate(-50%,-50%);
+box-sizing:border-box;
+padding:50px ;
+}
+</style>
+    </head>
+    <body background="untitled.png">
+         <center><h1 style="text_align:center;">GSNR INSTITUTE OF TECHNOLOGY</h1></center>
+        <center><h2>AIRPOT ROAD,BENGALURU</h2></center>
+        <center><h1>STUDENT REGESTRATION FORM</h1></center>
+        
+         <div class="registerbox">
+             <form method="post" action="reg.jsp">
+            <br> <input type="text" placeholder="enter name" name="studentname" required /><br>
+       
+        <br> <input type="text" placeholder="enter section" name="section" /><br>
+        <br> <input type="text" placeholder="enter class" name="class" /><br>
+        <br> <input type="text" placeholder="department " name="department" /><br>
+        <br> <input type="text"  placeholder="enter username" name="studentId" /><br>
+        <br> <input type="password"  placeholder="enter password" name="password" /><br>
+        <br> <button type ="submit" name="submit">Submit</button><br>
+        </form>
+    </body>
+</html>
