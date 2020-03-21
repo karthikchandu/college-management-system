@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+
+  function checkForm(form)
+  {
+    if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
+      if(form.pwd1.value.length < 6) {
+        alert("Error: Password must contain at least six characters!");
+        form.pwd1.focus();
+        return false;
+      }
+      if(form.pwd1.value == form.username.value) {
+        alert("Error: Password must be different from Username!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[0-9]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one number (0-9)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[a-z]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one lowercase letter (a-z)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[A-Z]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one uppercase letter (A-Z)!");
+        form.pwd1.focus();
+        return false;
+      }
+    } else {
+      alert("Error: Please check that you've entered and confirmed your password!");
+      form.pwd1.focus();
+      return false;
+    }
+
+    alert("Registration successful" );
+    return true;
+  }
+
+</script>
+<style>
+
+.regbox{
+ width: 450px;
+height: 545px;
+background:#add8e6;/*rgba(0,0,0,0.5) for transparent form*/
+color:#fff;
+top:56%;
+left:50%;
+position:absolute;
+transform:translate(-50%,-50%);
+box-sizing:border-box;
+padding:40px ;
+}
+input[id=a]{ width:200px;height:20px;border:2px solid #aaa; border-radius:4px;margin:8px;}
+input[id=b]{ width:200px;height:20px;border:2px solid #aaa; border-radius:4px;margin:8px;}
+select {width:200px;height:20px;border:2px solid #aaa; border-radius:4px;margin:8px;}
+h1{color:"#2c35c9";font-size:50px;text-shadow: 2px 2px 5px red;}
+td{font-size:17px;}
+
+
+</style>    
+        
+    </head>
+    <body>
+       
+<h1><center>Registration Form</center></h1>
+        
+          
+          
+          
+<div class="regbox">
+<form  onsubmit="return checkForm(this);" action="treg.jsp"><table>
+<tr>
+<td>Name:</td>
+<td><input id="a" type="text"  name="teachername" required></td>
+</tr>
+<tr>
+<td>Dob:</td>
+<td><input id="a" name="dob" type="date" required></td>
+<tr>
+<td>Email:</td>
+<td><input id="a" type="email"  name="email" ></td>
+</tr>
+<tr><td>Address:</td>
+<td><input id="a" type="text" name="address"required></td>
+</tr>
+<tr><td>phone:</td><td><input type="number" size="10" min="1000000000" id="a" name="phone"required></td></tr>
+<tr>
+<td>sex</td>
+<td><select name="gender">
+        <option name="select user" >select</option>
+        <option name="admin" >Male</option>
+        <option name="user" >Female</option>  </td>
+</tr>
+
+<tr><td>facultyId:</td><td> <input id="b" type="text" name="id"></td><td><input type="button" value="Generate" onclick="b.value=Math.round(Math.random()*100000)"></td></tr>
+<tr><td>Password:</td> <td><input id="a" type="password" name="pwd1"></td></tr>
+<tr><td>Confirm Password: </td><td><input id="a" type="password" name="pwd2"></td></tr>
+<tr><td><input type="submit" value="submit"></td><td><input type="reset" value="reset" ></td></tr>
+</table>
+</form>
+<a href="login.html">Already registred</a>
+</div>
+    </body>
+</html>
