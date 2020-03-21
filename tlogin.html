@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>login form</title>
+        <script>
+function validate()
+{
+    var uname=document.getElementById("usrname").value;
+    var pass=document.getElementById("pass").value;
+	if(uname=="")
+	{
+		document.getElementById("uerror").style.visibility='visible';
+		document.getElementById("uerror").style.color="red";
+		return false;<!--does not allow to enter into another page-->
+	}
+	else if(pass=="")
+	{
+		document.getElementById("perror").style.visibility='visible';
+		document.getElementById("perror").style.color="red";
+		return false;
+	}
+}
+function vari()
+{
+	document.getElementById("uerror").style.visibility='hidden';
+        document.getElementById("perror").style.visibility='hidden';
+	
+}
+
+</script>
+    <style>
+        
+        body{
+ margin: 0;
+ padding: 0;
+ background: url(12345.jpg);
+ baground-size:cover;
+background-attachment:fixed;
+background-position:center;
+ background-family: sans-serif;
+
+}
+
+.loginbox{
+ width: 320px;
+height: 420px;
+background:rgba(0,0,0,0.5);
+color:#fff;
+top:55%;
+left:50%;
+position:absolute;
+transform:translate(-50%,-50%);
+box-sizing:border-box;
+padding:50px ;
+}
+
+
+.loginbox p{
+font-weight:bold;
+font-size:20;
+color:white;
+}
+.loginbox input[type="text"],input[type="password"]{
+border:none;
+border-bottom:1px solid #fff;
+background:transparent;
+outline:none;
+height:40px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position:fixed;
+    top:0;
+    width:100%;
+    
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+    </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+          <ul>
+  <li><a class="active" href="registration.html">student Registration</a></li>
+  <li><a href="index.html">Student login</a></li>
+          </ul>  
+         <div class="loginbox">
+           
+            <h1>Login Here</h1>
+             <form  method="post" onsubmit="return validate()" action="rohit.html" >
+                 <table>
+                        <tr><td> username<input type="text" name="uname" id="usrname" placeholder="user name" onclick="vari()"></td></tr>
+                        <tr><td><div id ="uerror" style="visibility:hidden">no username entered </div></td></tr>
+                        <tr><td>password<input type="password" name="pwd" id="pass" placeholder="password" onclick="vari()"></td></tr>
+                        <tr><td><div id ="perror" style="visibility:hidden">no password entered </div></td></tr>
+                        <tr><td><input type="submit" name="submit" value="login" onclick="validate()">&nbsp&nbsp&nbsp
+                        <a href="tregistration.html">Register now</a></td></tr>
+                        <tr><td><input type="reset" value="reset" ></td></tr>
+                 </table>
+            </form>
+         </div>
+    </body>
+</html>
